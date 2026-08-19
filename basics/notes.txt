@@ -1,0 +1,84 @@
+INTRODUCTION----
+1: What is Data?
+Data is a collection of facts or information that can be stored, processed, and used by a system.
+
+2. What is a Database?
+A database is an organized collection of data that allows data to be stored, managed, retrieved, and updated efficiently.
+
+3. What is DBMS? DBMS = Database Management System
+A DBMS is software that allows us to create, store, retrieve, update, delete, and manage data in databases.
+A DBMS provides a system for storing data.
+
+4: What is SQL?
+SQL stands for Structured Query Language. It is a language used to communicate with relational databases.
+it is used to perform CRUD operations: Create,Read,Update,Delete.
+
+5. What is MySQL?
+MySQL is a database management system (DBMS).
+In simple terms, MySQL is a software program that stores and manages your data and understands SQL commands.
+MySQL is a relational database management system (RDBMS) that uses SQL to interact with its databases.
+
+# SQL = language
+MySQL = software that understands that language and manages your database
+The database stores and manages data; SQL is the language we use to communicate with it.
+                 SQL
+                  ↓
+        language used to
+        communicate with
+                  ↓
+                MySQL
+                  ↓
+                 DBMS
+                  ↓
+              Database
+                  ↓
+                 Data
+
+6: What is RDBMS?
+RDBMS stands for Relational Database Management System. It is a type of DBMS that stores data in tables and allows
+relationships to be established between those tables.
+Relational -> It means the data can be organized into tables, and those tables can be related to each other.
+
+7: What is a table?
+A table is a structured collection of related data organized into rows and columns.
+
+8: What is a row?
+A row represents one record in a table.
+
+9: What is a column?
+A column represents a specific attribute or type of data in a table.
+
+10: What is a field?
+the individual values are often called field values
+
+Database → contains tables
+Table → contains rows and columns
+Row → one complete record
+Column → one type/attribute of data
+
+11: What is DataType?
+A data type tells the database what kind of value can be stored in a column or variable.
+
+# DATA TYPES
+Category	Important types
+Integer	    INT, BIGINT
+Decimal	    DECIMALr
+Text	    VARCHAR, CHAR, TEXT
+Date/time	DATE, TIME, DATETIME, TIMESTAMP
+Boolean	    BOOLEAN
+
+~~~~~~~ CATEGORIES OF SQL COMMANDS ~~~~~~~
+SQL commands are grouped into different types based on what they do.
+Category	Meaning	                                                                Examples
+
+DDL	    Data Definition Language — creates or changes the structure of a database	CREATE, ALTER, DROP, TRUNCATE
+DML	    Data Manipulation Language — adds, changes, or removes data	                INSERT, UPDATE, DELETE
+DQL	    Data Query Language — retrieves data	                                    SELECT
+DCL	    Data Control Language — controls user permissions	                        GRANT, REVOKE
+TCL	    Transaction Control Language — manages database transactions	            COMMIT, ROLLBACK, SAVEPOINT
+
+DDL → Structure
+DML → Data
+DQL → Query/Retrieve
+DCL → Permissions
+TCL → Transactions
