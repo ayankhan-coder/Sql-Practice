@@ -1,39 +1,65 @@
 /* SELECT is used to produce or retrieve a result.
 The result can come from a table, or it can be calculated directly.*/
 
-use food_delivery;
+CREATE DATABASE college;
+USE college;
 
-select * from users;               -- retrieves all columns and rows
-select name from users;            -- retrieves specific columns
-select email from users;
-select name,age from users;
+CREATE TABLE student (
+    rollno INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks INT NOT NULL,
+    grade VARCHAR(1),
+    city VARCHAR(20)
+);
 
--- where , and , or , not --
--- select using where
-select * from users where age > 18;        -- retrieving with specific condition       
-select * from users where name = "Ayan";
-select name from users where age < 18;
-select name from users where age != 18;
+INSERT INTO student
+(rollno, name, marks, grade, city)
+VALUES
+(101, "anil", 78, "C", "Pune"),
+(102, "bhumika", 93, "A", "Mumbai"),
+(103, "chetan", 85, "B", "Mumbai"),
+(104, "dhruv", 96, "A", "Delhi"),
+(105, "emanuel", 12, "F", "Delhi"),
+(106, "farah", 82, "B", "Delhi");
 
-select * from users where name = "Jonas" and age > 18;    --  and 
-
-select * from users where age < 15 or name = "Mikkel";    -- or
-select name from users where not age = 18;                --  not 
-select email from users where not age > 20;
+select * from student;               -- retrieves all columns and rows
+select name from student;            -- retrieves specific columns
+select rollno,name,city from student;
 
 SELECT 10 + 20;           -- select is not only for retrieving data
 
-select name as andachor from users; -- a temporary name of column output 
-select age as hello from users;
+select name as StudentNames from student;   -- A temporary name of column output 
+select city as address from student;
 
-select distinct age from users;
-select * from users;
+select distinct city from student;   -- DISTINCT is used to remove duplicate values from the result.
+select distinct grade from student; 
 
-insert into users 
-(name , email, age, id)
-values
-("Spider","spider@gmail.com",25,8);
+-- WHERE CLAUSE - is used to filter rows based on a condition.
+-- using operators in where
 
+select * from student where marks > 80;
+select name from student where city = "Pune";
+
+select * from student where marks + 10 > 100;   -- we can also perform Math operation 
+
+select * from student where marks > 70 and city = "Pune";   -- and operator
+select * from student where marks = 10 and city = "Pune";
+
+select * from student where marks > 90 or city = "Mumbai";  -- or operator 
+
+select * from student where not city = "Mumbai";            -- not operator
+
+select * from student where marks between 50 and 80;   -- BETWEEN is used to check whether a value is within a specific range.
+select * from student where grade between "A" and "C";
+
+select * from student 
+where city in ("Pune","Mumbai","Bangalore");   -- IN is used to check if a value matches any value in a list.
+
+select * from student 
+where city not in ("Mumbai","Pune"); -- NOT IN is used to select rows where a value does NOT match any value in a given list.
+
+select * from student limit 3;  -- LIMIT is an SQL clause used to control how many rows are returned.
+select * from student where city = "Delhi" limit 2;
 
 
 
