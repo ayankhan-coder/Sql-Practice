@@ -61,6 +61,23 @@ where city not in ("Mumbai","Pune"); -- NOT IN is used to select rows where a va
 select * from student limit 3;  -- LIMIT is an SQL clause used to control how many rows are returned.
 select * from student where city = "Delhi" limit 2;
 
+select * from student order by marks asc;  -- order by sorts the result in asc,desc order 
+select name,marks from student order by marks desc limit 3;
+
+-- ~~~~ AGGREGATE FUNCTIONS ~~~~ -- 
+
+select max(marks) from student;
+select min(marks) from student;
+select avg(marks) from student;
+select count(name) from student;
+
+
+
+
+
+
+
+	
 
 
 
