@@ -65,11 +65,55 @@ select * from student order by marks asc;  -- order by sorts the result in asc,d
 select name,marks from student order by marks desc limit 3;
 
 -- ~~~~ AGGREGATE FUNCTIONS ~~~~ -- 
+-- Aggregate functions perform a calculation on multiple rows and return one result.
 
 select max(marks) from student;
 select min(marks) from student;
 select avg(marks) from student;
 select count(name) from student;
+
+select count(name) from student where city = "Delhi";
+select count(distinct city) from student;
+
+-- GROUP BY CLAUSE -- used to combine rows that have the same value into groups,
+select city from student group by city;
+select city, count(rollno) from student group by city;
+select city, max(marks) from student group by city;
+select city, min(marks) from student group by city;
+
+select city,name, count(name)from student group by city,name;
+
+select city, avg(marks) from student
+group by city order by city asc;
+
+select city, count(rollno) from student group by city;
+select city, avg(marks) from student group by city;
+select grade, max(marks) from student group by grade;
+
+select grade,count(rollno)
+from student 
+group by grade 
+order by grade;
+
+-- HAVING CLAUSE -- The HAVING clause in SQL is used to filter groups after GROUP BY.
+
+select city , count(rollno)
+from student 
+group by city
+having max(marks) > 95;
+
+select grade, avg(marks) from students group by grade having avg(marks) > 80;
+select city, count(rollno) from students group by city having min(rollno) > 3;
+
+
+
+
+
+
+
+
+
+
 
 
 
