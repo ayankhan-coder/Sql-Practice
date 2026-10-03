@@ -104,6 +104,64 @@ having max(marks) > 95;
 
 select grade, avg(marks) from students group by grade having avg(marks) > 80;
 select city, count(rollno) from students group by city having min(rollno) > 3;
+select city from student where grade = "A" group by city having max(marks) > 90;
+
+-- UPDATE -- UPDATE is used to modify existing data in a database table.
+
+set sql_safe_updates = 0;  -- to turn off the safe mode
+set sql_safe_updates = 1;  -- to turn on the safe mode
+
+update student
+set grade = "o"
+where grade = "A";
+
+update student
+set name = "Dhruv Rathee"
+where rollno = 104;
+select * from student;
+
+update student set marks = 82 where rollno = 105;
+update student set grade = "B" where marks between 80 and 90;
+
+update student set marks = marks + 1;
+
+-- DELETE -- to delete rows
+delete from student where name = "Chetan";
+delete from student;  -- deletes all rows
+
+
+-- Foreign key in another file -- 
+
+-- ALTER -- is used to change the structure of an existing database object, most commonly a table.
+
+alter table student 
+add column age int default 18;  -- adds a new column in table
+
+alter table student
+drop column age;     -- drops column in table
+
+alter table student
+rename to bacche;    -- renames the table 
+
+alter table bacche
+rename to student;
+
+alter table student
+change name naamyadaam varchar(50);  -- renames the column name
+
+alter table student 
+change naamyadaam name varchar(50);
+
+alter table student
+modify name varchar(20);          -- modify the datatype 
+
+-- TRUNCATE -- Deletes all the data of Table
+truncate table student;
+
+
+
+
+
 
 
 
