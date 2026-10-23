@@ -1,7 +1,15 @@
 /* Constraints are rules that we apply to a table's columns to
 control what kind of data can be stored.*/
 
+create database school;
 use school;
+
+create table students(
+name varchar(50),
+rollNum int,
+age int,
+address varchar(50)
+);
 
 create table temp1(
 id int not null,       	   -- not null/ Prevents NULL values
@@ -21,4 +29,7 @@ select * from temp1;
 
 -- show tables;
 -- drop table temp1;
+
+
+
 

@@ -102,8 +102,8 @@ from student
 group by city
 having max(marks) > 95;
 
-select grade, avg(marks) from students group by grade having avg(marks) > 80;
-select city, count(rollno) from students group by city having min(rollno) > 3;
+select grade, avg(marks) from student group by grade having avg(marks) > 80;
+select city, count(rollno) from student group by city having min(rollno) > 3;
 select city from student where grade = "A" group by city having max(marks) > 90;
 
 -- UPDATE -- UPDATE is used to modify existing data in a database table.
@@ -159,33 +159,53 @@ modify name varchar(20);          -- modify the datatype
 truncate table student;
 
 
+-- JOINS IN ANOTHER FILE -- 
+
+-- union in another file -- 
+
+-- SQL Sub Queries -- 
+/*A Subquery or Inner query or a Nested query is a query
+within another SQL query.It involves 2 select statements*/
 
 
+select avg(marks) from student;
+select name ,marks from student where marks > 74.6666;
+
+select name,marks from student 
+where marks > (select avg(marks) from student);
+
+select name ,rollno from student
+where rollno % 2 = 0;
+
+select name ,rollno from student
+where rollno in (
+select rollno from student
+where rollno % 2 = 0);
 
 
+select max(marks) from 
+(select * from student where city = "Delhi") as temp;
 
+select max(marks) from student
+where city = "Delhi";
 
+select (select max(marks) from student), name from student;
 
+-- VIEWS --
+-- A view is a virtual table created from a SQL query
 
+SELECT * FROM student;
 
+create view view1 as 
+select rollno, name from student;
 
+select * from view1;
 
+delete from view1 where rollno = 101;
 
+create view toppers as
+select name , marks from student 
+where marks > 80;
 
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
+select * from toppers;
 

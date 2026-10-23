@@ -78,32 +78,18 @@ select city, avg(marks) from students group by city having avg(marks) > 75;
 select grade, max(marks) from students group by grade having max(marks) > 90;
 select name,max(marks) from students where city = "Mumbai" group by city having max(marks) order by max(marks)desc; -- i dont fucking know
 select * from students where city = "Mumbai" order by marks desc limit 2; -- simple correct 
-select city,count(rollno), avg(marks)from students group by city having avg(marks) > 75; -- yeah this was challenging
+select city,count(rollno), avg(marks)from students group by city having avg(marks) > 75; -- yeah this was challenging\
 
 
+alter table student 
+add column age int default 18;
 
+alter table student
+modify fullName varchar(30);
 
+alter table student
+change  fullName name varchar(30);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+alter table students
+drop column age;
 
